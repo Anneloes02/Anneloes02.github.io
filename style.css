@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="/style.css" type="text/css">
 
+h1 {
+  color: Navy;
+  background-color: orange;
+  font-size: x-large;
+}
+
 body {
   font-family: Calibri, sans-serif;
   margin-left: 15%;
