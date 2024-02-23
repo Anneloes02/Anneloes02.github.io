@@ -1,1 +1,17 @@
+<link rel="stylesheet" href="/style.css" type="text/css">
 
+body {
+  font-family: Calibri, sans-serif;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.problem {
+    margin-left: 5%;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 5px; 
+    font-size: large;
+}
