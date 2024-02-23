@@ -1,23 +1,9 @@
-<link rel="stylesheet" href="/style.css" type="text/css">
-
-h1 {
-  color: Navy;
-  background-color: orange;
-  font-size: x-large;
-}
 
 body {
+  background-color: #232D4B;
   font-family: Calibri, sans-serif;
   margin-left: 15%;
   margin-right: 15%;
 }
 
-.problem {
-    margin-left: 5%;
-    margin-right: 15px;
-    margin-bottom: 25px;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-bottom: 5px; 
-    font-size: large;
-}
+
