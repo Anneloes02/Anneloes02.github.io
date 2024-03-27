@@ -1,6 +1,7 @@
 <html>
 <body>
-    <h1>How many pies are left?</h1>
+    <h1>Pie Count Down </h1>
+    <h3>What is a better way to demonstrate DOM?</h3>
 
     <script>
         var count = 10;
@@ -19,8 +20,9 @@
             // displayCount(i); // Pass the 'i' variable as an argument
 
             if (count <= 0) { // double "==" is equality comparison
-                countobj.innerHTML = "<b><font size='+5'>No values left..!</b>";
+                countobj.innerHTML = "<b><font size='+5'>NONE ):</b>";
                 document.body.style.backgroundColor = '#ffd7b5';
+                document.getElementById("funnyImage").style.display = "block";
             }
 
         }
