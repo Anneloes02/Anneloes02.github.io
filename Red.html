@@ -1,4 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pie Count Down!</title>
+</head>
 <body>
     <h1>Pie Count Down!</h1>
 
@@ -18,21 +23,20 @@
             count -= 1;
             displayCount(count);
 
-            // Calculate the red component based on the count.
+            // Calculate the red component based on the count to make the background gradually redder.
             var redComponent = Math.floor(255 * (1 - count / 10));
-            var colorString = 'rgb(' + redComponent + ', 0, 0)';
+            var colorString = 'rgb(' + redComponent + ', ' + (255 - redComponent) + ', ' + (255 - redComponent) + ')';
 
             document.body.style.backgroundColor = colorString;
 
             if (count <= 0) {
-                var countobj = document.getElementById("count");
-                countobj.innerHTML = "<b style='font-size: large;'>NONE ):</b>";
+                document.getElementById("count").innerHTML = "<b style='font-size: large;'>NONE ):</b>";
                 document.getElementById("pieImage").style.display = "block";
             }
         }
 
+        // Initial display update.
         displayCount(count);
     </script>
-
 </body>
 </html>
