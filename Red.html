@@ -2,20 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pie Count Down!</title>
-<style>
-    /* Ensure text color is white for better visibility against darker backgrounds */
-    body {
-        color: white;
-    }
-    /* Override text color to black initially for contrast against the white background */
-    #count {
-        color: black;
-    }
-</style>
+<title>Pie Count Down!!!</title>
 </head>
 <body>
-    <h1>Pie Count Down!!</h1>
+    <h1>Pie Count Down!</h1>
 
     <h2>I can still eat this many pies: <span id="count"></span></h2>
     <img id="pieImage" src="Pie.png" alt="Pie" style="display:none; max-width: 100%; height: auto;">
@@ -27,20 +17,15 @@
         function displayCount(counter) {
             var countobj = document.getElementById("count");
             countobj.innerHTML = "<em>" + counter.toString() + "</em>";
-            if (counter === 10) {
-                document.body.style.color = "black";
-            } else {
-                document.body.style.color = "white"; 
-            }
         }
 
         function updateCount() {
             count -= 1;
             displayCount(count);
 
-            // Calculate the red component based on the count to make the background transition from white to deep red.
-            var redComponent = Math.floor(255 * (count / 10));
-            var colorString = 'rgb(' + (255 - redComponent) + ', ' + (255 - redComponent * 0.75) + ', ' + (255 - redComponent * 0.75) + ')';
+            // Keep the red component constant at 255 and decrease green and blue components to 0 as count approaches 0.
+            var nonRedComponent = Math.floor(255 * (count / 10));
+            var colorString = 'rgb(255, ' + nonRedComponent + ', ' + nonRedComponent + ')';
 
             document.body.style.backgroundColor = colorString;
 
