@@ -1,1 +1,38 @@
+<html>
+<body>
+    <h1>Pie Count Down!</h1>
 
+    <h2>I can still eat this many pies: <span id="count"></span></h2>
+    <img id="pieImage" src="Pie.png" alt="Pie" style="display:none; max-width: 100%; height: auto;">
+    <button onclick="updateCount()">Next</button>
+
+    <script>
+        var count = 10;
+
+        function displayCount(counter) {
+            var countobj = document.getElementById("count");
+            countobj.innerHTML = "<em>" + counter.toString() + "</em>";
+        }
+
+        function updateCount() {
+            count -= 1;
+            displayCount(count);
+
+            // Calculate the red component based on the count.
+            var redComponent = Math.floor(255 * (1 - count / 10));
+            var colorString = 'rgb(' + redComponent + ', 0, 0)';
+
+            document.body.style.backgroundColor = colorString;
+
+            if (count <= 0) {
+                var countobj = document.getElementById("count");
+                countobj.innerHTML = "<b style='font-size: large;'>NONE ):</b>";
+                document.getElementById("pieImage").style.display = "block";
+            }
+        }
+
+        displayCount(count);
+    </script>
+
+</body>
+</html>
