@@ -1,0 +1,31 @@
+<html>
+<body>
+    <h1>Pie Fun Facts!</h1>
+
+    <p id="funFact"></p>
+    <img id="pieImage" src="Pie.png" alt="Pie" style="display:none; max-width: 100%; height: auto;">
+    <button onclick="displayFunFact()">Next Fun Fact</button>
+
+    <script>
+        var funFacts = [
+            "The world record for the largest pumpkin pie ever baked weighed 3,699 pounds!",
+            "The first pies appeared around 9500 BC in the Egyptian Neolithic period.",
+            "The first mention of fruit pies was in the plays of the ancient Greeks around 500 BC.",
+            "The average American eats approximately 6 slices of pie every year!",
+            "The pie is one of the oldest prepared foods, with evidence dating back to the ancient Egyptians.",
+            "The largest pie ever made was in 1992. It weighed 39,683 pounds and was 20 feet in diameter!"
+        ];
+        var currentFactIndex = 0;
+
+        function displayFunFact() {
+            var funFactElement = document.getElementById("funFact");
+            funFactElement.innerHTML = funFacts[currentFactIndex];
+            currentFactIndex = (currentFactIndex + 1) % funFacts.length;
+
+            document.body.style.backgroundColor = '#ffffff';
+            document.getElementById("pieImage").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
