@@ -1,36 +1,31 @@
 <html>
 <body>
-    <h1>Pie Count Down </h1>
+    <h1>Pie Count Down</h1>
+
+    <h2>I can still eat this many pies: <span id="count"></span></h2>
+    <img id="pieImage" src="Pie.png" alt="Pie" style="display:none; max-width: 100%; height: auto;">
+    <button onclick="updateCount()">Next</button>
 
     <script>
         var count = 10;
 
         function displayCount(counter) {
-            countobj = document.getElementById("count");
+            var countobj = document.getElementById("count");
             countobj.innerHTML = "<em>" + counter.toString() + "</em>";
         }
 
         function updateCount() {
-            count = count - 1; // single "=" means assignment (":=") 
-
-            // Correct: Passing the value of 'count' variable
+            count -= 1;
             displayCount(count);
 
-            // displayCount(i); // Pass the 'i' variable as an argument
-
-            if (count <= 0) { // double "==" is equality comparison
-                countobj.innerHTML = "<b><font size='+5'>NONE ):</b>";
+            if (count <= 0) {
+                var countobj = document.getElementById("count");
+                countobj.innerHTML = "<b style='font-size: large;'>NONE ):</b>";
                 document.body.style.backgroundColor = '#ffd7b5';
-                document.getElementById("Pie.png").style.display = "block";
+                document.getElementById("pieImage").style.display = "block";
             }
-
         }
-    </script>
 
-    <h2>I can still eat this many pies: <span id="count"></span></h2>
-    <button onclick="updateCount()">Next</button>
-
-    <script>
         displayCount(count);
     </script>
 
