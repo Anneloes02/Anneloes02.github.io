@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Photo Carousel!!</title>
-    <style>
-        #carouselContainer {
-            text-align: center; /* Center the image and buttons */
-        }
-
-        #prevButton, #nextButton {
-            margin: 10px;
-            padding: 5px 20px;
-        }
-    </style>
-</head>
 <body>
+<h2 style="color: navy; font-weight: bold;">PhotoCarousel!!</h2>
 
+<script>
+    
 <div id="carouselContainer">
     <img id="cimage" height="600" src="" alt="Image Carousel">
     <button id="prevButton">Previous</button>
     <button id="nextButton">Next</button>
 </div>
-
-<script>
 
     // Current image index
     var currentIndex = 0;
@@ -36,7 +23,7 @@
     carouselImage.src = images[0];
 
     // Function Loop
-    div = document.getElementById("ciamge");
+    div = document.getElementById("cimage");
 
     for (i = 1; 1 <= count; i = i + 1)    {
         pic = "https://picsum.photos/seed/" + i.toString();
