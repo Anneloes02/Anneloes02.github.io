@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-<h2 style="color: navy; font-weight: bold;">CreativePhotoCarousel!!!</h2>
+<h2 style="color: navy; font-weight: bold;">CreativePhotoCarousel!!</h2>
 
 <div id="carouselContainer">
     <img id="cimage" height="600" src="" alt="Image Carousel">
@@ -62,7 +62,7 @@
         if (!playing) {
             slideShowInterval = setInterval(function() {
                 changeImage(1);
-            }, 3000); // Change image every 3 seconds
+            }, 500); // Change image every 0.5 seconds
             playing = true;
         }
     }
