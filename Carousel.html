@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PhotoCarousel</title>
+    <title>Photo Carousel</title>
     <style>
         #carouselContainer {
             text-align: center; /* Center the image and buttons */
@@ -26,16 +26,18 @@
 <script>
     var currentIndex = 0;
     var images = [];
-    var count = 50; // Assuming you want 50 images
+    var count = 50; // Set the desired number of images
 
-    // Populate the images array
+    // Generate an array of image URLs
     for (var i = 1; i <= count; i++) {
-        var pic = "https://picsum.photos/seed/" + i.toString() + "/500";
-        images.push(pic);
+        images.push(`https://picsum.photos/seed/${i}/500/300`);
     }
 
-    var carouselImage = document.getElementById("cimage");
-    carouselImage.src = images[0]; // Set the first image as the default
+    // Function to set the first image as the default
+    function setInitialImage() {
+        var carouselImage = document.getElementById("cimage");
+        carouselImage.src = images[0];
+    }
 
     // Function to change the image
     function changeImage(step) {
@@ -47,8 +49,11 @@
             currentIndex = images.length - 1; // Loop back to last image
         }
 
-        carouselImage.src = images[currentIndex];
+        document.getElementById("cimage").src = images[currentIndex];
     }
+
+    // Set the initial image
+    setInitialImage();
 
     // Event listeners for buttons
     document.getElementById("prevButton").onclick = function() { changeImage(-1); };
