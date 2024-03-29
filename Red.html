@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pie Count Down!!!</title>
+<title>Pie Count Down!!</title>
 </head>
 <body>
     <h1>Pie Count Down!</h1>
@@ -23,16 +23,27 @@
             count -= 1;
             displayCount(count);
 
-            // Keep the red component constant at 255 and decrease green and blue components to 0 as count approaches 0.
-            var nonRedComponent = Math.floor(255 * (count / 10));
-            var colorString = 'rgb(255, ' + nonRedComponent + ', ' + nonRedComponent + ')';
-
-            document.body.style.backgroundColor = colorString;
-
             if (count <= 0) {
                 document.getElementById("count").innerHTML = "<b style='font-size: large;'>NONE ):</b>";
                 document.getElementById("pieImage").style.display = "block";
+                document.body.style.backgroundColor = '#800c0c'; // Full red
             }
+            else if (count <= 2) {
+                document.body.style.backgroundColor = '#ca1212'; // Darker red
+            }
+            else if (count <= 5) {
+                document.body.style.backgroundColor = '#f10f0f'; // Medium red
+            }
+            else if (count <= 8) {
+                document.body.style.backgroundColor = '#fc6d6d'; // Lighter red
+            }
+            else {
+                document.body.style.backgroundColor = '#ffbaba'; // Very light red
+            }
+        }
+
+            document.body.style.backgroundColor = colorString;
+
         }
 
         // Initial display update.
