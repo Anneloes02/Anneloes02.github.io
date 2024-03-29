@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Carousel</title>
+    <style>
+        #carouselContainer {
+            text-align: center; /* Center the image and buttons */
+        }
 
+        #prevButton, #nextButton {
+            margin: 10px;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="carouselContainer">
+    <img id="cimage" height="600" src="" alt="Image Carousel">
+    <button id="prevButton">Previous</button>
+    <button id="nextButton">Next</button>
+</div>
+
+<script>
+    // Array of images
+    var images = [
+        'https://mysiteurl/image1.jpg',
+        'https://mysiteurl/image2.jpg',
+        'https://mysiteurl/image3.jpg'
+    ];
+
+    // Current image index
+    var currentIndex = 0;
+
+    // Get the image and buttons by ID
+    var carouselImage = document.getElementById("cimage");
+    var prevButton = document.getElementById("prevButton");
+    var nextButton = document.getElementById("nextButton");
+
+    // Set the first image as the default
+    carouselImage.src = images[0];
+
+    // Function to change the image
+    function changeImage(step) {
+        currentIndex += step;
+
+        // Check boundaries
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Loop back to first image
+        } else if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Loop back to last image
+        }
+
+        // Update the image source
+        carouselImage.src = images[currentIndex];
+    }
+
+    // Event listeners for buttons
+    prevButton.onclick = function() { changeImage(-1); };
+    nextButton.onclick = function() { changeImage(1); };
+</script>
+
+</body>
+</html>
