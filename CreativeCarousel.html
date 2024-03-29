@@ -1,1 +1,90 @@
-C
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Carousel</title>
+    <style>
+        #carouselContainer {
+            text-align: center; /* Center the image and buttons */
+        }
+
+        #prevButton, #nextButton, #startButton, #stopButton {
+            margin: 10px;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+<h2 style="color: navy; font-weight: bold;">PhotoCarousel!!!</h2>
+
+<div id="carouselContainer">
+    <img id="cimage" height="600" src="" alt="Image Carousel">
+    <br>
+    <button id="prevButton">Previous</button>
+    <button id="nextButton">Next</button>
+    <button id="startButton">Start Slideshow</button>
+    <button id="stopButton">Stop Slideshow</button>
+</div>
+
+<script>
+    var currentIndex = 0;
+    var images = [];
+    var count = 50; // Set the desired number of images
+    var slideShowInterval;
+    var playing = false; // Initially not playing
+
+    // Generate an array of image URLs
+    for (var i = 1; i <= count; i++) {
+        images.push(`https://picsum.photos/seed/${i}/500/300`);
+    }
+
+    // Function to set the first image as the default
+    function setInitialImage() {
+        var carouselImage = document.getElementById("cimage");
+        carouselImage.src = images[0];
+    }
+
+    // Function to change the image
+    function changeImage(step) {
+        currentIndex += step;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Loop back to first image
+        } else if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Loop back to last image
+        }
+
+        document.getElementById("cimage").src = images[currentIndex];
+    }
+
+    // Start the slideshow
+    function startSlideShow() {
+        if (!playing) {
+            slideShowInterval = setInterval(function() {
+                changeImage(1);
+            }, 3000); // Change image every 3 seconds
+            playing = true;
+        }
+    }
+
+    // Stop the slideshow
+    function stopSlideShow() {
+        if (playing) {
+            clearInterval(slideShowInterval);
+            playing = false;
+        }
+    }
+
+    // Set the initial image
+    setInitialImage();
+
+    // Add event listeners for buttons
+    document.getElementById("prevButton").onclick = function() { changeImage(-1); };
+    document.getElementById("nextButton").onclick = function() { changeImage(1); };
+    document.getElementById("startButton").onclick = startSlideShow;
+    document.getElementById("stopButton").onclick = stopSlideShow;
+
+</script>
+
+</body>
+</html>
