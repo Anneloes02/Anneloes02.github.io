@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Photo Carousel!</title>
+    <title>Photo Carousel!!</title>
     <style>
         #carouselContainer {
             text-align: center; /* Center the image and buttons */
@@ -23,11 +23,6 @@
 </div>
 
 <script>
-    // Dynamic generation of an array of images
-    var images = [];
-    for (var i = 1; i <= 50; i++) {
-        images.push(`https://anneloes02.github.com/CarouselImage${i}.jpg`);
-    }
 
     // Current image index
     var currentIndex = 0;
@@ -37,24 +32,15 @@
     var prevButton = document.getElementById("prevButton");
     var nextButton = document.getElementById("nextButton");
 
-
     // Set the first image as the default
     carouselImage.src = images[0];
 
-    // Function to change the image
-    function changeImage(step) {
-        currentIndex += step;
+    // Function Loop
+    div = document.getElementById("ciamge");
 
-        // Check boundaries
-        if (currentIndex >= images.length) {
-            currentIndex = 0; // Loop back to first image
-        } else if (currentIndex < 0) {
-            currentIndex = images.length - 1; // Loop back to last image
-        }
-
-        // Update the image source
-        carouselImage.src = images[currentIndex];
-    }
+    for (i = 1; 1 <= count; i = i + 1)    {
+        pic = "https://picsum.photos/seed/" + i.toString();
+        div.innerHTML += '<a href="' + pic + '/500"><img src=' + pic + '/50></img></a>';
 
     // Event listeners for buttons
     prevButton.onclick = function() { changeImage(-1); };
